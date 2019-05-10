@@ -56,6 +56,7 @@ public class MapGrid : MonoBehaviour
             if (cellObj == null)
             {
                 Debug.Log(cellsPath);
+                return;
             }
 
 
@@ -72,6 +73,13 @@ public class MapGrid : MonoBehaviour
                 obj.transform.SetParent(cellsTrans);
                 obj.transform.localPosition = Vector3.zero;
                 obj.transform.localScale = Vector3.one;
+                
+                //给每个加载的模块进行默认图片的赋值。
+                Cell cell = obj.GetComponent<Cell>();
+                cell.itemImgPath =@"Assets\Resource\Runtime\Map\item\item\woodSword 1.png" ;
+                cell.normalImgPath =@"Assets\Resource\Runtime\Map\item\item\potionGreen 1.png" ;
+                cell.Id = i + 1;
+
             }
 
             //刷新场景
@@ -113,7 +121,7 @@ public class MapGrid : MonoBehaviour
     //地图文本的位置
    // string path1 = @"C:\Users\10649\Desktop\BDFramework.Core\Assets\Data\MapData.txt";
     //cell预制体的位置
-     string cellsPath ="Assets/Resource/Runtime/Map/item/cell.prefab" ;
+     string cellsPath ="Assets/Resource/Runtime/Map/item/cell1.prefab" ;
 
     /// <summary>
     /// 背景图片的变换

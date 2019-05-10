@@ -25,6 +25,7 @@ public enum CellEvent
 {
     GetItem = 0,
     Run,
+    Stop,
 }
 
 /// <summary>
